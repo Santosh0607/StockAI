@@ -1,231 +1,94 @@
-# 🚀 StockAI - NEPSE Market Prediction Platform
+# Stocks AI - NEPSE Market Prediction
 
-A modern, secure web application for predicting NEPSE (Nepal Stock Exchange) market trends using AI/ML models with a beautiful glassmorphic dark theme UI.
+A machine learning application for predicting stock market trends using LSTM and SimpleRNN models.
 
-## ✨ Features
+## Features
 
-### 🔐 **Secure Authentication System**
-- User registration and login
-- Password hashing with PBKDF2-SHA256
-- Session management with 24-hour timeout
-- SQLite database with encrypted storage
-- Input validation and security features
+- Upload and process stock market data in Excel format
+- Clean and preprocess time series data automatically
+- Train deep learning models on historical data
+- Visualize predictions with interactive charts
+- Technical analysis and correlation heatmaps
+- Future price prediction for up to 90 days
 
-### 📊 **AI-Powered Stock Prediction**
-- LSTM and SimpleRNN models for stock price prediction
-- Technical analysis indicators
-- Interactive charts and visualizations
-- Model performance metrics
-- Future price predictions
-
-### 🎨 **Modern UI/UX**
-- Glassmorphic dark theme design
-- Responsive design (desktop, tablet, mobile)
-- Smooth animations and transitions
-- Neon accent colors (blue/green theme)
-- Professional fintech aesthetic
-
-### 📈 **Data Analysis Features**
-- Excel file upload support
-- Data validation and cleaning
-- Statistical analysis
-- Correlation heatmaps
-- Multiple visualization tabs
-
-## 🛡️ **Security Implementation**
-
-### Database Security
-- **Database**: SQLite with SQLAlchemy ORM
-- **Password Storage**: PBKDF2-SHA256 hashing with 16-byte salt
-- **SQL Injection Protection**: Parameterized queries
-- **Session Security**: Secure tokens with automatic cleanup
-
-### Authentication Features
-- Email validation and sanitization
-- Password strength requirements:
-  - Minimum 8 characters
-  - At least 1 uppercase letter
-  - At least 1 lowercase letter
-  - At least 1 number
-- User account status tracking
-- Login attempt monitoring
-
-### Session Management
-- 24-hour session timeout
-- Secure session tokens (32-byte hex)
-- CSRF protection tokens
-- Automatic session cleanup
-
-## 🚀 **Quick Start**
+## Getting Started
 
 ### Prerequisites
-- Python 3.8 or higher
-- pip package manager
+- Python 3.8+ installed
+- Required packages (see requirements.txt)
 
 ### Installation
 
-1. **Clone or download the project**
-   ```bash
-   cd StockAI-master
-   ```
-
-2. **Install dependencies**
+1. Clone the repository or download the source code
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-
-3. **Run the application**
+3. Run the application:
    ```bash
-   python run_stockai.py
+   python app.py
+   ```
+   or use the provided batch file:
+   ```bash
+   run_app.bat
    ```
 
-4. **Access the applications**
-   - 🔑 **Authentication**: http://127.0.0.1:8060
-   - 📈 **Main Dashboard**: http://127.0.0.1:8050
+The application will be available at http://127.0.0.1:8050/ in your web browser
 
-### Alternative: Run Components Separately
+## Usage Guide
 
-**Start Authentication System:**
-```bash
-python auth_app.py
-```
+1. **Upload Data**: Click the upload box to select an Excel file or drag and drop. The file should contain stock data with columns: Symbol, Date, Open, High, Low, Close, and Volume.
 
-**Start Main Dashboard:**
-```bash
-python app.py
-```
+2. **Configure Model Parameters**:
+   - **Time Step (Days to Look Back)**: The number of previous days used to predict the next day's price (default: 60)
+   - **Prediction Days**: How many days into the future to predict (default: 30)
+   - **Training Ratio**: Percentage of data used for training (default: 0.8)
+   - **Model Type**: Choose between:
+     - **LSTM (Complex)**: More accurate but may have compatibility issues
+     - **SimpleRNN (Compatible)**: Simpler model with better compatibility
 
-## 📋 **How to Use**
+3. **Train Model & Predict**: Click the button to process the data and generate predictions
 
-### Step 1: Create Account / Login
-1. Open the authentication page (http://127.0.0.1:8060)
-2. Click "Sign Up" to create a new account or use "Login" for existing accounts
-3. Fill in your details with a strong password
-4. After successful login, you'll get a link to the main dashboard
+4. **Analyze Results**: View the generated charts and metrics:
+   - Price Prediction: Historical data and future predictions
+   - Technical Analysis: Key indicators like moving averages
+   - Model Performance: Training and validation metrics
+   - Correlation Analysis: Relationships between different features
+   - Trend Analysis: Short-term trend visualization
 
-### Step 2: Upload Stock Data
-1. Access the main dashboard (http://127.0.0.1:8050)
-2. Upload an Excel file (.xlsx) with the following columns:
-   - **Symbol**: Stock symbol (e.g., NEPSE)
-   - **Date**: Trading date
-   - **Open**: Opening price
-   - **High**: Highest price
-   - **Low**: Lowest price
-   - **Close**: Closing price
-   - **Volume**: Trading volume
+## Data Format
 
-### Step 3: Configure Model Parameters
-1. Set time step (recommended: 60)
-2. Set prediction days (recommended: 30)
-3. Set training ratio (recommended: 0.8)
-4. Choose model type (LSTM Complex or SimpleRNN Compatible)
-
-### Step 4: Train Model and View Results
-1. Click "Train Model & Predict"
-2. Wait for training to complete
-3. View results in multiple tabs:
-   - **Price Prediction**: Future price forecasts
-   - **Technical Analysis**: Technical indicators
-   - **Model Performance**: Training metrics
-   - **Correlation Analysis**: Data correlations
-
-## 📊 **Data Format Example**
+Your Excel file should follow this format:
 
 | Symbol | Date       | Open    | High    | Low     | Close   | Volume          |
 |--------|------------|---------|---------|---------|---------|-----------------|
-| NEPSE  | 2025-04-12 | 2677.58 | 2687.92 | 2667.00 | 2670.77 | 5,637,981,250.23|
-| NEPSE  | 2025-04-11 | 2665.23 | 2678.45 | 2660.12 | 2675.89 | 4,892,543,123.45|
+| NEPSE  | 2025-04-12 | 2677.58 | 2687.92 | 2667.00 | 2670.77 | 5,637,981,250   |
 
-## 🔧 **Configuration**
+## Model Information
 
-### Environment Variables
-- `SECRET_KEY`: Flask secret key for session encryption (auto-generated if not set)
+### LSTM (Long Short-Term Memory)
+- Complex architecture for capturing long-term dependencies
+- Better for larger datasets with clear patterns
+- More computationally intensive
 
-### Database Location
-- SQLite database: `stockai_users.db` (created automatically)
+### SimpleRNN
+- Simplified recurrent neural network architecture
+- More compatible with different environments
+- Faster training with comparable results for many datasets
+- Automatically used as fallback if LSTM fails
 
-### Ports
-- Authentication System: 8060
-- Main Dashboard: 8050
+## Troubleshooting
 
-## 🏗️ **Architecture**
+- **Model Training Errors**: Try using the SimpleRNN model type
+- **Data Format Issues**: Ensure your Excel file follows the required format
+- **Dependency Errors**: Check that all packages in requirements.txt are installed
 
-```
-StockAI/
-├── auth.py              # Authentication system core
-├── auth_app.py          # Authentication web application
-├── app.py               # Main dashboard application
-├── run_stockai.py       # Application runner
-├── requirements.txt     # Python dependencies
-├── assets/
-│   └── style.css       # Modern glassmorphic CSS
-├── models/             # AI/ML models
-├── utils/              # Data processing utilities
-└── output/             # Generated files
-```
+## License
 
-## 🛠️ **Dependencies**
+This project is open source and available under the MIT License.
 
-- **Web Framework**: Dash, Flask
-- **Database**: SQLAlchemy, SQLite
-- **Security**: Flask-Login, Flask-Bcrypt, Werkzeug
-- **AI/ML**: TensorFlow, scikit-learn
-- **Data**: Pandas, NumPy
-- **Visualization**: Plotly
-- **UI**: Dash Bootstrap Components
+## Acknowledgments
 
-## 🔒 **Production Deployment Recommendations**
-
-For production use, consider these enhancements:
-
-1. **Database**: Switch to PostgreSQL or MySQL
-2. **SSL/TLS**: Enable HTTPS encryption
-3. **Rate Limiting**: Implement login attempt limits
-4. **Email Verification**: Add email confirmation
-5. **Monitoring**: Set up logging and monitoring
-6. **Backups**: Regular database backups
-7. **Environment**: Use environment variables for sensitive data
-
-## 🐛 **Troubleshooting**
-
-### Common Issues
-
-**Port Already in Use:**
-- The runner script will detect and offer to kill existing processes
-- Manually kill processes: `lsof -ti:8050 | xargs kill -9`
-
-**Database Issues:**
-- Delete `stockai_users.db` to reset the database
-- Check file permissions
-
-**Import Errors:**
-- Ensure all dependencies are installed: `pip install -r requirements.txt`
-- Use Python 3.8 or higher
-
-**Authentication Issues:**
-- Clear browser cookies and sessions
-- Check that both applications are running
-
-## 📝 **License**
-
-This project is for educational and research purposes. Please ensure compliance with local regulations when used with real financial data.
-
-## 🤝 **Contributing**
-
-Feel free to fork, modify, and enhance this project. Areas for improvement:
-- Additional ML models
-- More technical indicators
-- Enhanced security features
-- Real-time data integration
-- Mobile app version
-
-## 📞 **Support**
-
-For issues or questions:
-1. Check the troubleshooting section
-2. Review console logs for errors
-3. Ensure all dependencies are properly installed
-
----
-
-**🎯 Built with modern web technologies and security best practices for NEPSE market analysis.** 
+- The NEPSE (Nepal Stock Exchange) for data inspiration
+- TensorFlow and Keras for machine learning capabilities
+- Dash and Plotly for interactive visualizations 
