@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks AI - NEPSE Market Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2D3E50;
+            --secondary-color: #18BC9C;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-weight: 700;
+        }
+        .hero span {
+            color: var(--secondary-color);
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .btn-primary:hover {
+            background-color: #1a252f;
+            border-color: #1a252f;
+        }
+        .btn-success {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        .btn-success:hover {
+            background-color: #128f76;
+            border-color: #128f76;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero text-center">
+        <div class="container">
+            <h1 class="display-4">Stocks <span>AI</span> - NEPSE Market Prediction</h1>
+            <p class="lead">AI-driven platform that analyzes and predicts market movements in the Nepal Stock Exchange</p>
+            <a href="http://127.0.0.1:8050/" class="btn btn-success btn-lg mt-3">Launch Application</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Project Overview -->
+        <section class="my-5">
+            <h2 class="text-center mb-4">Project Overview</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="lead">
+                        Stocks AI is an advanced platform designed to empower investors, traders, and financial analysts 
+                        with AI-driven tools for data-driven decision-making in the Nepal Stock Exchange (NEPSE).
+                    </p>
+                    <p>
+                        Our system utilizes machine learning algorithms to analyze historical market data, identify patterns, 
+                        and forecast potential market movements, providing you with valuable insights to make informed investment decisions.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://img.freepik.com/free-vector/financial-stock-market-graph-with-3d-rendering-stock-chart_1142-9309.jpg" 
+                         class="img-fluid rounded shadow" alt="Stock Market Visualization">
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section class="my-5">
+            <h2 class="text-center mb-4">Key Features</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">📊</div>
+                            <h4 class="card-title">Predictive Analysis</h4>
+                            <p class="card-text">
+                                Utilize machine learning algorithms to forecast short-term and long-term market movements
+                                based on historical patterns and current trends.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">📈</div>
+                            <h4 class="card-title">Interactive Visualization</h4>
+                            <p class="card-text">
+                                Explore data through intuitive and interactive visualizations that help you understand 
+                                market trends and patterns at a glance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="feature-icon">🔍</div>
+                            <h4 class="card-title">Technical Analysis</h4>
+                            <p class="card-text">
+                                Access comprehensive technical indicators and analysis tools to help you make 
+                                data-driven investment decisions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="my-5">
+            <h2 class="text-center mb-4">How It Works</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="https://img.freepik.com/free-vector/stock-market-analysis-concept-illustration_114360-29686.jpg" 
+                         class="img-fluid rounded shadow" alt="How It Works">
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center" 
+                                 style="width: 40px; height: 40px;">1</div>
+                        </div>
+                        <div>
+                            <h4>Upload Your Data</h4>
+                            <p>Upload your stock data in Excel format to start the analysis process.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center" 
+                                 style="width: 40px; height: 40px;">2</div>
+                        </div>
+                        <div>
+                            <h4>Configure Parameters</h4>
+                            <p>Customize model parameters to match your specific prediction needs.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-3">
+                            <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center" 
+                                 style="width: 40px; height: 40px;">3</div>
+                        </div>
+                        <div>
+                            <h4>Train & Predict</h4>
+                            <p>Let our AI model train on your data and generate accurate predictions.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <div class="bg-primary rounded-circle text-white d-flex align-items-center justify-content-center" 
+                                 style="width: 40px; height: 40px;">4</div>
+                        </div>
+                        <div>
+                            <h4>Analyze Results</h4>
+                            <p>Explore interactive visualizations and insights to inform your investment decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="my-5 text-center py-5 bg-light rounded">
+            <h2 class="mb-4">Ready to Start Predicting?</h2>
+            <p class="lead mb-4">Launch the application now and start making data-driven investment decisions.</p>
+            <a href="http://127.0.0.1:8050/" class="btn btn-success btn-lg">Launch Application</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>Stocks AI - NEPSE Market Prediction © 2023</p>
+            <p>Built with Dash, TensorFlow and Python</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
