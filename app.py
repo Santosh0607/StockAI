@@ -23,7 +23,7 @@ OUTPUT_DIR = "output"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Sample data configurations
-SAMPLE_DATA_PATH = "../testdata"
+SAMPLE_DATA_PATH = "testdata"
 SAMPLE_DATA_FILES = {
     "CHCL": {
         "file": "CHCL_2022-02-08_2025-05-28.xlsx",
