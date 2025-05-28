@@ -1,0 +1,32 @@
+# Python virtual environment
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code settings
+.vscode/
+
+# Environment variables
+.env
+
+# Output files
+output/
+*.log
+
+# Model files (if they're large)
+*.h5
+*.pkl
+*.joblib
+
+# OS specific
+.DS_Store
+Thumbs.db 
